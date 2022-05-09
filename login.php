@@ -1,32 +1,39 @@
 <?php
-$username="root";
-$password ="";
-$server ='localhost';
-$db ='projectone';
- $con = mysqli_connect($server,$username,$password,$db);
-if ($db) {
+include 'connection.php';
+ if(isset($_POST['loginbtn'])){
+    $Username= $_POST['username'];              
+     $Password = $_POST['password'];
+     $username_search = " select * from regist where Username='$Username' ";
+     $query = mysqli_query($con,$username_search);
+// checks the email in very row if not founs ir has not been register
 
-    if (isset($_POST['loginbtn'])) {
-        $username = mysqli_real_escape_string($db, $_POST['username']);
-        $password = mysqli_real_escape_string($db, $_POST['password']);
-       // $password = md5($password);
+    if($username_search == "") {
+        echo "User name not found";
+    } else {
+        $username_count = mysqli_num_rows($query); 
 
-        $sql = "SELECT * FROM regist WHERE username='$username' AND password='$password' ";
-        $result = mysqli_query($db, $sql);
+     if($username_count){
+          $user_pass =mysqli_fetch_assoc($query);
+          $db_pass = $user_pass['Password'];
+           $pass_decode = password_verify($Password, $db_pass);
+           if ($pass_decode){
+            
+            header("location:Pyament.php");
+            } 
+            else{
+                    echo "Invalid password ";
+                }
 
-        if ($result) {
-            if (mysqli_num_rows($result) > 0) {
-                header("location:Porfolio.html");
-            }
+   //else {
+        //    echo "invalid password";
+        //   } 
         }
     }
+     
 }
-// else{
-//     die("<script>alert('Connection Failed')</script>");
-//     header("Location: index.php");
-// }
-
 ?>
+
+
 
 <style>
     .heed,
@@ -54,10 +61,10 @@ if ($db) {
     }
 
     .box1 {
-        background-image: url("img/mount.jpg");
+        background-image: url("https://i.pinimg.com/originals/4c/81/38/4c813874ba8de321fa813222c65788e5.jpg");
         width: 450px;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size:auto;
         border-radius: 8px;
     }
 
@@ -74,10 +81,11 @@ if ($db) {
         border-radius: 8px;
         box-shadow: 5px 5px 10px rgb(184, 181, 181);
         height: 500px;
+        width: 1000px;
     }
 
     body {
-        background-color: #F5F9FF;
+        background-color:#A4AFF5;
         opacity: 0.2px;
     }
 
@@ -186,7 +194,7 @@ if ($db) {
             <div class="heed">
                 <h1>Login</h1>
             </div>
-            <form class="form" action="login.php" method="POST">
+            <form class="form" action="#" method="POST">
                 <div class="formb">
                     <label class="uname">Username</label><br>
                     <input class="username" placeholder="Type your username" type="text" name="username"><br><br>
@@ -200,7 +208,7 @@ if ($db) {
                     <a href="#">Forget Password?</a><br><br>
                     <!-- <input class="butto" name="loginbtn" type="submit"> -->
                     <button class="butto" name="loginbtn" type="submit">Login</button> <br><br>
-                    <button class="butto1" name="registerbtn">Crate Account</button>
+                    <button class="butto1" name="registerbtn">   <a href="index.php" type="submit"> Create Account</button>
                 </div>
             </form>
 
@@ -210,7 +218,7 @@ if ($db) {
                 <a href="facebook.com"><img src="img/facebook.png" alt="facebook logo" width="30px"></a>
                 <a href="twitter.com"><img src="img/twiter.png" alt="twitter logo" width="30px"></a>
                 <a href="google.com"><img src="img/google.png" alt="google logo" width="30px"></a>
-                <a href="instagram.com"><img src="img/insta.png" alt="instagram logo" width="27px"></a>
+                <a href="instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="instagram logo" width="30px"></a>
             </div>
             <br>
             <!-- <div class="sinup">

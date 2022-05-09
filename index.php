@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register.com</title>
-   < <?php include 'connection.php';?> 
+    <?php include 'connection.php';?> 
      <link rel="stylesheet" href="style.css"> 
     <link rel="shortcut icon" href="img/iconrn.jpg">
     
@@ -25,7 +25,7 @@
             <form class="form" action="#" method="POST">
                 <div class="formb">
                     <label class="uname">Username</label><br>
-                    <input class="username" placeholder="Enter user name" type="text" name="Username"><br><br>
+                    <input class="username" placeholder="Enter user name" type="text" name="username"><br><br>
                     <label class="pword">Password</label><br>
                     <input class="password" placeholder="Enter a  password" type="password" name="Password"><br><br>
                     <label class="pword">Re-enter Password</label><br>
@@ -79,13 +79,14 @@
 
 // $ post here is super global vairbael which  is used to collec data from after submitting an html 
  if (isset($_POST['submit'])){
-     $username= $_POST['Username'] ;
-     $password= $_POST['Password'] ;
+     $Username= $_POST['username'] ;
+     $Password= password_hash($_POST ['password'], PASSWORD_DEFAULT);
+     
      $email= $_POST['Email'] ;
     // $Email = $_POST['email'] ;
      //$Phonenumber = $_POST['phonenumber'] ;
 
-      $insertquery = "insert into regist(username,password,email) values('$username','$password','$email')" ;
+      $insertquery = "insert into regist(username,password,email) values('$Username','$Password','$email')" ;
 // passing into database 
       $res= mysqli_query($con, $insertquery);
 	   if($res){ 

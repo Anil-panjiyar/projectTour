@@ -1,0 +1,113 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.full-page
+{
+    height: 100%;
+	width: 100%;
+	background-image: linear-gradient(rgba(38, 218, 221, 0.4),rgba(0,0,0,0.4)),url("mountain.jpg");
+	background-position:centre;
+	background-size: cover;
+	position: absolute;
+}
+.navbar
+{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 60px;
+    /* padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 50px;
+ */   
+} 
+nav
+{
+    flex: 1;
+    text-align: right;
+}
+nav ul 
+{
+    display: inline-block;
+    list-style: none;
+}
+nav ul li
+{
+    display: inline-block;
+    margin-right: 70px;
+}
+nav ul li a
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    font-family: sans-serif;
+}
+nav ul li button
+{
+    font-size: 20px;
+    color: white;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+nav ul li button:hover
+{
+    color: aqua;
+}
+nav ul li a:hover
+{
+    color: aqua;
+}
+a
+{
+    text-decoration: none;
+    color: palevioletred;
+    font-size: 28px;
+}
+.content{
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	color: #fff;
+	padding-top: 150px;
+	font-size: 30px;
+ }
+ .content h1{
+	 font: size 70px; 
+	 margin-top: 60px;
+	 font-family: cursive;
+ }
+ .content p{
+	 margin: 20px auto;
+	 font-weight: 100;
+	 font-family: 'Times New Roman', Times, serif;
+ }
+ .banner-btn a{
+	 text-decoration: none;
+	 display: inline-block;
+	 margin: 20px 10px;
+	 padding: 15px;
+	 background: transparent;
+	 color: #fff;
+	 cursor: pointer;
+	 font-size: medium;
+	 font-family: Arial, Helvetica, sans-serif;
+	 border: 3px solid #009688;
+	 position: relative;
+	 z-index: 1;
+	 transition: color 0.5s;
+ }
+ .bannter-btn a:hover span{
+	 width: 100%;
+ }
+ .banner-btn a:hover{
+	 color: none;
+ }
+ 
+ 
