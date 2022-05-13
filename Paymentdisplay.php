@@ -14,7 +14,7 @@
 <form class="form" action="#" method="POST">
 <div class="container">
         <h1 class="text-white bg-dark text-cente"> 
-               Contact  us Details
+               Payment Details
         </h1>
             <div class="table-responsive">
                 <table class = "table table-bordered table-striped table-hover">

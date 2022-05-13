@@ -44,10 +44,10 @@ while($res =mysqli_fetch_array($query)){
     <tr>
       <td><?php echo $res['id']; ?> </td>
    <td><?php echo $res['Destination']; ?> </td>
-   <td><?php echo $res['Checkin']; ?> </td>
-   
-   <td><?php echo $res['Checkout']; ?> </td>
-  
+
+   <td><?php echo $res['Checkin']. date("/m/d");?> </td>
+    <td><?php echo $res['Checkout']. date("/m/d");?> </td>
+
    <td><?php echo $res['Price']; ?> </td>
    <td><?php echo $res['Adults']; ?> </td>
    <td><?php echo $res['Children']; ?> </td>

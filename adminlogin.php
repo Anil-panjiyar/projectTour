@@ -78,7 +78,7 @@ include 'connection.php';
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 5px 5px 10px rgb(184, 181, 181);
-        height: 550px;
+        height: 500px;
     }
 
     body {
@@ -252,22 +252,5 @@ include 'connection.php';
 </html>
 
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="post" action="login.php">
-     <input type="text" placeholder="Enter your name" name="username">
-     <input type="password" name="password" placeholder="Enter your password">
-     <input type="password" name="password1" placeholder="Please reenter password">
-     <br>
-     <input type="submit" name="loginbtn">
-      <input type="submit" name="registerbtn">
-    </form>
-</body>
+
 </html> -->

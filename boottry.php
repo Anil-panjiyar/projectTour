@@ -43,13 +43,12 @@ while($res =mysqli_fetch_array($query)){
 
   <div class="card">
             <div class="card-body">
-             <img src="<?php echo $res['Picture']; ?>" class ="card-img-top" alt="Destinatin images  ">   
-            
-              <h2 class ="card-title">Title:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $res['Title']; ?></h2>
-         
-               <h3 class ="card-title">Price:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $res['Price']; ?></h3>
-              <h4 class ="card-title">Days:&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $res['Days']; ?></h4>
-              <h5>Description</h5>
+            <img src="<?php echo $res['Picture']; ?>" width="100" height="100" class ="card-img-top" alt="Destinatin images  ">
+              <h2 class ="card-title"><?php echo $res['Title']; ?></h2>
+              <h3>Price</h3>
+              <h3 class ="card-title"><?php echo $res['Price']; ?></h3>
+              <h5 class ="card-title"><?php echo $res['Days']; ?></h5>
+              
               <p class="card-text">
               <?php echo $res['Description']; ?>
               </p>
@@ -70,4 +69,3 @@ while($res =mysqli_fetch_array($query)){
           
 </body>
 </html>
-<!-- width="100" height="100"  -->

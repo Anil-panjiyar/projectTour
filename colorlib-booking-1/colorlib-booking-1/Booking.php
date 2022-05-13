@@ -68,9 +68,9 @@
 										<div class="form-group">
 											<span class="form-label">Price</span>
 											<input class="form-control" name="price" type="text" required>
-											<select class="form-control">
+											<!-- <select class="form-control">
 												
-											</select>
+											</select> -->
 											<span class=></span>
 										</div>
 									</div>
@@ -122,6 +122,7 @@
      $Destination= $_POST['destination'] ;
      $Checkin= $_POST['checkin'] ; 
      $Checkout= $_POST['checkout'] ;
+	 $Price =  $_POST['price'] ;
      $Adults= $_POST['adults'];
 	 $Children= $_POST['children'];
 

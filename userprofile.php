@@ -41,7 +41,7 @@ while($res =mysqli_fetch_array($query)){
    ?>
     <tr>
       <td><?php echo $res['Id']; ?> </td>
-   <td><?php echo $res['username']; ?> </td>
+   <td><?php echo $res['Username']; ?> </td>
    <td><?php echo $res['email']; ?> </td>
     
   </tr>

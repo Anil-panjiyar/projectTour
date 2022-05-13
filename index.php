@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- <html lang="en">   -->
 
@@ -6,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/team.png">
     <title>Register.com</title>
-    <?php include 'connection.php';?> 
-     <link rel="stylesheet" href="style.css"> 
+
+     <link rel="stylesheet" href="userkolagi.css"> 
     <link rel="shortcut icon" href="img/iconrn.jpg">
     
 </head>
@@ -25,7 +25,7 @@
             <form class="form" action="#" method="POST">
                 <div class="formb">
                     <label class="uname">Username</label><br>
-                    <input class="username" placeholder="Enter user name" type="text" name="username"><br><br>
+                    <input class="username" placeholder="Enter user name" type="text" name="Username"><br><br>
                     <label class="pword">Password</label><br>
                     <input class="password" placeholder="Enter a  password" type="password" name="Password"><br><br>
                     <label class="pword">Re-enter Password</label><br>
@@ -37,10 +37,13 @@
                     <br>
                 </div>
                 <div class="button">
-                     <a href="#">Forget Password?</a><br><br> 
+                     <a href="#">Forget Password?</a><br>
                     <!-- <input class="butto" name="loginbtn" type="submit"> -->
                     <!-- <button class="butto1" name="registerbtn" type="submit">Sign up</button> <br><br> -->
                     <input type="submit" class= "button1" name="submit" value = "Sign up "/>
+                    <br>
+                    <p>Already have an account</p><a href="login.php" class="login"><b>Login</b></a>
+                    
                     <!-- <button class="butto1" name="registerbtn">Crate Account</button>  -->
                 </div>
             </form>
@@ -53,11 +56,11 @@
                     <h1>WELCOME TO </h1>
                 </div>
                 <div class="come">
-                    <h1>THE WEBSITE</h1>
+                    <h1>T&T WEBSITE</h1>
                 </div>
             </div>
             <div class="dash">
-                <p>Create an Account to Access Dashboard</p>
+                <p>Sign up to our website to access on packages</p>
             </div>
         </div>
     </div>
@@ -79,14 +82,13 @@
 
 // $ post here is super global vairbael which  is used to collec data from after submitting an html 
  if (isset($_POST['submit'])){
-     $Username= $_POST['username'] ;
-     $Password= password_hash($_POST ['password'], PASSWORD_DEFAULT);
-     
+     $Username= $_POST['Username'] ;
+     $Password= password_hash($_POST ['Password'], PASSWORD_DEFAULT);
      $email= $_POST['Email'] ;
     // $Email = $_POST['email'] ;
      //$Phonenumber = $_POST['phonenumber'] ;
 
-      $insertquery = "insert into regist(username,password,email) values('$Username','$Password','$email')" ;
+      $insertquery = "insert into regist(Username,Password,email) values('$Username','$Password','$email')" ;
 // passing into database 
       $res= mysqli_query($con, $insertquery);
 	   if($res){ 
@@ -107,3 +109,5 @@
 	    
 	}
 	  ?>
+
+ 

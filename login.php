@@ -16,7 +16,9 @@ include 'connection.php';
           $user_pass =mysqli_fetch_assoc($query);
           $db_pass = $user_pass['Password'];
            $pass_decode = password_verify($Password, $db_pass);
+           echo $pass_decode;
            if ($pass_decode){
+            
             
             header("location:Pyament.php");
             } 
@@ -138,16 +140,20 @@ include 'connection.php';
     }
 
     .butto1 {
-        background-color: #DE5333;
+        background-color: #6b42bd;
         border: #A79DEB 1px solid;
-        width: 350px;
-        height: 40px;
+        width: 300px;
+        height: 10px;
         color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;       
 
     }
 
     .butto1:hover {
-        background-color: #FA9449;
+        background-color: #4032cd;
         color: rgb(255, 255, 255);
         /* border-radius: 12px; */
     }
@@ -183,6 +189,7 @@ include 'connection.php';
     <meta name="description" content="this is a login page practice">
     <meta name="keywords" content="login hsekinrm hser loginkn">
     <meta name="author" content="nikesh shrestha">
+    <link rel="shortcut icon" href="img/team.png">
     <!-- <link rel="stylesheet" href="login.css"> -->
     <link rel="shortcut icon" href="img/iconrn.jpg">
     <title>login page</title>
@@ -208,17 +215,18 @@ include 'connection.php';
                     <a href="#">Forget Password?</a><br><br>
                     <!-- <input class="butto" name="loginbtn" type="submit"> -->
                     <button class="butto" name="loginbtn" type="submit">Login</button> <br><br>
-                    <button class="butto1" name="registerbtn">   <a href="index.php" type="submit"> Create Account</button>
+                    <!-- <button class="butto1" name="registerbtn">   <a href="index.php" style="text-decoration: none;" type="submit"> Crate Account</button> -->
+                    <a href="index.php" class="butto1" name="registerbtn">Create Account</a>
                 </div>
             </form>
 
             <p class="up">Or Sign Up Using</p>
 
             <div class="media">
-                <a href="facebook.com"><img src="img/facebook.png" alt="facebook logo" width="30px"></a>
-                <a href="twitter.com"><img src="img/twiter.png" alt="twitter logo" width="30px"></a>
-                <a href="google.com"><img src="img/google.png" alt="google logo" width="30px"></a>
-                <a href="instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="instagram logo" width="30px"></a>
+                <a href="www.facebook.com"><img src="img/facebook.png" alt="facebook logo" width="30px"></a>
+                <a href="www.twitter.com"><img src="img/twiter.png" alt="twitter logo" width="30px"></a>
+                <a href="www.google.com"><img src="img/google.png" alt="google logo" width="30px"></a>
+                <a href="www.instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="instagram logo" width="30px"></a>
             </div>
             <br>
             <!-- <div class="sinup">

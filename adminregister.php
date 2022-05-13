@@ -32,6 +32,7 @@
 	}
 	  ?>
 
+
 <style>
     .red {
         background-color: red;
@@ -76,8 +77,8 @@
     }
 
     .box1 {
-        background-image: url("img/mont.jpg");
-        width: 600px;
+        background-image: url("img/mb.jpg");
+        width: 460px;
         background-repeat: no-repeat;
         background-size: contain;        
     }
@@ -89,12 +90,13 @@
         gap: 2%;
         /* border: powderblue 2px solid; */
         padding: 30px 20px 30px 30px;
-        margin-left: 220px;
-        margin-top: 30px;
+        margin-left: 210px;
+        margin-top: 50px;
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 5px 5px 10px rgb(184, 181, 181);
-        height: 580px;
+        height: 550px;
+        width: 1050px;
     }
 
     body {
@@ -132,33 +134,34 @@
     }
 
     .button {
-        text-align: center;    
+        text-align: center;
+        gap: 20px;
     }
-    
-    .already{
-        margin-right: 80px;
+
+    .butto {
+        background-color: whitesmoke;
+        border: #A4AFF5 1px solid;
+        width: 350px;
+        height: 40px;
+        color: rgb(0, 0, 0);
+    }
+
+    .butto:hover {
+        background-color: rgb(211, 208, 208);
+        color: #F56954;
+        /* border-radius: 12px; */
     }
 
     .butto1 {
         background-color: #9999ff;
         border: #A79DEB 1px solid;
-        width: 270px;
-        height: 36px;
+        width: 350px;
+        height: 40px;
         color: white;
+        margin-top: 10px;
         font-size: 15px;
         border-radius: 8px;
-        margin-right: 80px;
-    }
 
-    .login {
-        background-color: #9999ff;
-        border: #A79DEB 1px solid;
-        width: 270px;
-        height: 36px;
-        color: white;        
-        font-size: 15px;
-        border-radius: 8px;
-        margin-right: 80px;
     }
 
     .butto1:hover {
@@ -167,17 +170,10 @@
         border-radius: 8px;
     }
 
-    .login:hover {
-        background-color: #6666FF;
-        color: rgb(255, 255, 255);
-        border-radius: 8px;
-    }
-
-
     .formb {
         text-align: left;
         margin-left: 80px;
-        margin-top: 6px;
+        margin-top: 10px;
 
     }
 
@@ -209,7 +205,13 @@
     .postkolagi{
         width: 150px;
         height: 30px;
-        font-size: 18px;
+        font-size: 12px;
+        
+    }
+
+    .loogin{
+        font-weight: bold;
+        color: blue;
         
     }
 </style>
@@ -223,10 +225,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register.com</title>
     <!-- <link rel="stylesheet" href="register.css"> -->
-    <link rel="shortcut icon" href="img/iconrn.jpg">
+    <link rel="shortcut icon" href="img/team.png">
 </head>
 
 <body>
+    <div>
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo "<div class='red'>" . $_SESSION['message'] . "</div>";
+        }
+        ?>
+    </div>
+
+    <div>
+        <?php
+        if (isset($_SESSION['message1'])) {
+            echo "<div class='green'>" . $_SESSION['message1'] . "</div>";
+        }
+        ?>
+    </div>
+
     <div class="bbox">
         <div class="box">
             <div class="heed">
@@ -250,17 +268,15 @@
                     <option value="Staff">Staff</option>
                     <option value="Accountant">Accountant</option>
                     </select> <br>
-
-                    <!-- <input type="submit" class= "butto2" name="submit"  value = "Log in "/> -->
                     
                     <br>
-                    <br>
                 </div>
-                <div class="button">               
-                    <input type="submit" class= "butto1" name="submit" value = "Register "/>
-                    <p class="already">Already have an Account</p>
-                    <!-- <button class="login"> <a href="adminregister.php">Login</button> -->
-                    <button class="login" name="loginbutton"> <a href="adminlogin.php">Login</button>
+                <div class="button">
+                    <!-- <a href="#">Forget Password?</a><br><br> -->
+                    <!-- <input class="butto" name="loginbtn" type="submit"> -->
+                    <button class="butto1" name="submit" type="submit">Sign up</button> <br>
+                    <p>Already have an account</p><a href="adminlogin.php" class="loogin">Login</a>
+                    <!-- <button class="butto1" name="registerbtn">Crate Account</button>  -->
                 </div>
             </form>
 
